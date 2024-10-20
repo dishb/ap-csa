@@ -3,8 +3,8 @@
 import java.util.Scanner;
 import kareltherobot.*;
 
-public class Main implements Directions {
-    public static void main(String[] args) {
+public class App implements Directions {
+    public static void main(String[] args) throws Exception {
         Scanner s = new Scanner(System.in);
         System.out.println("\nPlease enter the side length of the diamond below.");
         System.out.println("Enter a number (15 or below) or good results aren't guaranteed.\n");

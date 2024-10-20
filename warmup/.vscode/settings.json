@@ -1,6 +1,12 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "jars/KarelJRobot.jar"
-    ]
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar"
+        ],
+        "exclude": [
+            "lib/KarelJRobot.jar"
+        ]
+    }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class App {
     // The following 2 variables are instance variables.
     // We create a variable of type integer called 'max'. It is
     // set to the minimum value of the 'Integer' data type, which is -2,147,483,648
@@ -8,7 +8,7 @@ public class Main {
     // Create a new variable of type integer called 'num'. Set it to 0.
     static int num = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         askMax(); // Call the 'askMax' function.
     }
 
@@ -25,6 +25,7 @@ public class Main {
             catch(Exception e) {
                 System.out.println("That is not a valid input.");
             }
+            sc.close();
 
             if(num > max) { // If the number is greater than the max, we set the max to the number.
                 max = num;

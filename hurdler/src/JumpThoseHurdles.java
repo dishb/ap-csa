@@ -81,6 +81,7 @@ public class JumpThoseHurdles {
         Scanner s = new Scanner(System.in);
         System.out.println("\nPlease enter the name of a world file to load:\n");
         String worldName = s.nextLine();
+        s.close();
         System.out.print("\n");
 
 		World.readWorld(worldName);

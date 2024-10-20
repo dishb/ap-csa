@@ -1,7 +1,7 @@
 import kareltherobot.*;
 
-public class Main implements Directions {
-    public static void main(String[] args) {
+public class App implements Directions {
+    public static void main(String[] args) throws Exception {
         // Changed semi-colons to commas to seperate arguments.
         // Changed starting position.
         // Gave 'fred' more beepers.
