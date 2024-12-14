@@ -11,6 +11,11 @@ public class Drink{
         this.isEmpty = isEmpty;
     }
 
+    public void emptyDrink() {
+        System.out.println(this.name + " has been drank.");
+        this.isEmpty = false;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

@@ -53,9 +53,7 @@ public class App {
     public static void drinkAll(Drink[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
-                if (arr[i].isEmpty() == true) {
-                    arr[i].setEmpty(false);
-                }
+                arr[i].emptyDrink();
             }
         }
     }
