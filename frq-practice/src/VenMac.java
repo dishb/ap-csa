@@ -9,8 +9,9 @@ public class VenMac {
     public VenMac() {
         stock = new ArrayList<Drink>();
         
-        // Range of "i" is 0 to 3, inclusive for both.
+        // Range of "i" is 0 to 4, inclusive for both.
         for (int i = 0; i < (int)(Math.random() * 4 + 1); i++) {
+            // The random price is any where from 1 to 4 dollars, inclusive both.
             double randPrice = Math.random() * 4 + 1;
             // The line below rounds a the randPrice variable to the nearest hundredth.
             double roundedPrice = (double)((int)(randPrice * 100)) / 100;
