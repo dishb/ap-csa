@@ -5,9 +5,12 @@
  *  @version 2.0
  */
 
+import java.util.ArrayList;
+
 /** 
  * A Board class for concentration
  */
+
 public class Board
 {  
   private static String[] tileValues = {"lion", "lion",
@@ -17,6 +20,7 @@ public class Board
                                         "monkey", "monkey",
                                         "turtle", "turtle"
                                         }; 
+  private ArrayList<Tile> tileValuesList = new ArrayList<Tile>();
   private Tile[][] gameboard = new Tile[3][4];
 
   /**  
@@ -26,9 +30,16 @@ public class Board
    */
   public Board()
   {
-   
-    /* your code here */ 
+    for (String value : tileValues) {
+        tileValuesList.add(new Tile(value));
+    }
 
+    for (int i = 0; i < gameboard.length; i++) {
+        for (int j = 0; j < gameboard[0].length; j++) {
+            int randomTile = (int) (Math.random() * tileValuesList.size());
+            gameboard[i][j] = new Tile(tileValuesList.remove(randomTile).getValue());
+        }
+    }
   }
 
  /** 
@@ -42,10 +53,20 @@ public class Board
    */
   public String toString()
   {
+    String boardString = "";
+
+    for (Tile[] row : gameboard) {
+        for (Tile tile : row) {
+            if (tile.isShowingValue()) {
+                boardString += tile.getValue() + " ";
+            } else {
+                boardString += tile.getHidden() + " ";
+            }
+        }
+        boardString += "\n";
+    }
  
-    /* your code here */
- 
-    return "";
+    return boardString;
   }
 
   /** 
@@ -58,9 +79,14 @@ public class Board
    */
   public boolean allTilesMatch()
   {
+    for (Tile[] row : gameboard) {
+        for (Tile tile : row) {
+            if (tile.matched() == false) {
+                return false;
+            }
+        }
+    }
 
-    /* your code  here */
-    
     return true;
   }
 
@@ -77,8 +103,7 @@ public class Board
    */
   public void showValue (int row, int column)
   {
-   
-    /* your code here */
+    gameboard[row][column].show();
   }  
 
   /** 
@@ -100,9 +125,16 @@ public class Board
    */
   public String checkForMatch(int row1, int col1, int row2, int col2)
   {
-    String msg = "";
+    String msg = "No match found.";
 
-     /* your code here */
+     if (gameboard[row1][col1].getValue().equals(gameboard[row2][col2].getValue())) {
+        gameboard[row1][col1].foundMatch();
+        gameboard[row2][col2].foundMatch();
+        msg = "Match found.";
+     } else {
+        gameboard[row1][col1].hide();
+        gameboard[row2][col2].hide();
+     }
     
      return msg;
   }
@@ -118,7 +150,13 @@ public class Board
   public boolean validateSelection(int row, int col)
   {
 
-    /* your code here */
+    if (row < 0 || row >= gameboard.length || col < 0 || col >= gameboard[0].length) {
+        return false;
+    }
+
+    if (gameboard[row][col].matched()) {
+        return false;
+    }
 
     return true;
   }
