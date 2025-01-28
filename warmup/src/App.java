@@ -19,7 +19,7 @@ public class App {
 
         for (int[] row : arr) {
             for (int col : row) {
-                System.out.print(col + " ");
+                System.out.print(row[col] + " ");
             }
             System.out.println("");
         }
