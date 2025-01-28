@@ -4,7 +4,7 @@ public class App {
         int current = 0;
         for (int[] row : arr) {
             for (int col = 0; col < row.length; col++) {
-                row[col] = current + (4 * col);
+                row[col] = current + (arr.length * col);
             }
             current++;
         }
