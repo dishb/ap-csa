@@ -63,6 +63,7 @@ public class Game
         // check if user chosen same tile twice
         if ((row1 == row2) && (col1 == col2))
         {
+          AudioPlayer.playSound("/Users/dishb/Documents/ap-csa/concentration/sounds/error.wav");
           System.out.println("You mush choose a different second tile");
           wait(2);
           validTile = false;
@@ -74,6 +75,7 @@ public class Game
       displayBoard();
 
       // determine if tiles match
+      AudioPlayer.playSound("/Users/dishb/Documents/ap-csa/concentration/sounds/blip.wav");
       String matched = board.checkForMatch(row1, col1, row2, col2);
       System.out.println(matched);
 
@@ -112,6 +114,7 @@ public class Game
 
     if (!board.validateSelection(num1, num2))
     {
+      AudioPlayer.playSound("/Users/dishb/Documents/ap-csa/concentration/sounds/error.wav");
       System.out.print("Invalid input, please try again. ");
       wait(2);
       return false;
