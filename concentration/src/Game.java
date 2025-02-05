@@ -15,7 +15,12 @@ public class Game {
         System.out.println("\nPress Enter to continue...");
         in.nextLine();
 
-        board = new Board();
+        System.out.println("How many rows would you like?");
+        int rows = in.nextInt();
+        System.out.println("How many columns would you like?");
+        int cols = in.nextInt();
+
+        board = new Board(rows, cols);
         while (!board.allTilesMatch()) {
                 row1 = -1;
                 col1 = -1;
