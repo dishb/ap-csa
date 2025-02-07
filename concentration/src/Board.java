@@ -9,7 +9,7 @@ public class Board {
                                           "turtle", "turtle"
                                           }; 
     private ArrayList<Tile> tileValuesList = new ArrayList<Tile>();
-    private Tile[][] gameboard;
+    public Tile[][] gameboard;
 
     public Board(int rows, int cols) {
         gameboard = new Tile[rows][cols];
