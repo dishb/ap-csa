@@ -56,18 +56,10 @@ public class Board {
     }
 
     public void showValue (int row, int col) {
-        row -= 1;
-        col -= 1;
-
         gameboard[row][col].show();
     }  
 
     public String checkForMatch(int row1, int col1, int row2, int col2) {
-        row1 -= 1;
-        col1 -= 1;
-        row2 -= 1;
-        col2 -= 1;
-
         String msg = "No match found.";
 
         if (gameboard[row1][col1].getValue().equals(gameboard[row2][col2].getValue())) {
@@ -87,9 +79,6 @@ public class Board {
     }
 
     public boolean validateSelection(int row, int col) {
-        row -= 1;
-        col -= 1;
-
         if (row < 0 || row >= gameboard.length || col < 0 || col >= gameboard[0].length) {
             return false;
         }
