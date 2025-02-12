@@ -13,6 +13,10 @@ public class App {
     private int secondRow = -1;
     private int secondCol = -1;
 
+    public static void main(String[] args) {
+        new App();
+    }
+
     App() {
         JFrame frame = new JFrame("\"Concentration\" by Dishant Bhandula");
         frame.setLayout(new GridLayout(ROWS, COLS));
@@ -83,9 +87,5 @@ public class App {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);;
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new App();
     }
 }
